@@ -21,3 +21,11 @@ func TestBubbleSort(t *testing.T) {
 	assert.Equal(t, true, reflect.DeepEqual(arr, specArr))
 	t.Log(arr)
 }
+
+func TestInsertionSort(t *testing.T) {
+	arr := []int{6, 3, 4, 2, 1}
+	InsertionSort(arr)
+	specArr := []int{1, 2, 3, 4, 6}
+	assert.Equal(t, true, reflect.DeepEqual(arr, specArr))
+	t.Log(arr)
+}
