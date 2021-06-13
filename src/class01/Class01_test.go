@@ -50,3 +50,8 @@ func TestBSNearRight(t *testing.T) {
 	assert.Equal(t, 3, BSNearRight(arr, 3))
 	assert.Equal(t, 4, BSNearRight(arr, 5))
 }
+
+func TestBSAwesome(t *testing.T) {
+	arr := []int{5, 4, 3, 4, 3, 1, 2}
+	assert.Equal(t, 3, BSAwesome(arr))
+}
