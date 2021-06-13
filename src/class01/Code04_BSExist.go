@@ -1,5 +1,6 @@
 package class01
 
+// BSExist 二分查找
 func BSExist(arr []int, num int) bool {
 	if arr == nil || len(arr) == 0 {
 		return false

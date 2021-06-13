@@ -1,5 +1,6 @@
 package class01
 
+// SelectionSort 选择排序
 func SelectionSort(arr []int) {
 	if arr == nil || len(arr) < 2 {
 		return

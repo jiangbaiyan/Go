@@ -1,5 +1,6 @@
 package class01
 
+// InsertionSort 插入排序
 func InsertionSort(arr []int) {
 	if arr == nil || len(arr) == 0 {
 		return

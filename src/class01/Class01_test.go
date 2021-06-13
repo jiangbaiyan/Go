@@ -36,3 +36,10 @@ func TestBSExist(t *testing.T) {
 	assert.Equal(t, true, BSExist(arr, 2))
 	assert.Equal(t, true, BSExist(arr, 6))
 }
+
+func TestBSNearLeft(t *testing.T) {
+	arr := []int{1, 2, 2, 3, 4, 6, 7, 8, 10}
+	assert.Equal(t, 1, BSNearLeft(arr, 2))
+	assert.Equal(t, 3, BSNearLeft(arr, 3))
+	assert.Equal(t, 5, BSNearLeft(arr, 5))
+}

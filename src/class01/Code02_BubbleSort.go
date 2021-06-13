@@ -1,5 +1,6 @@
 package class01
 
+// BubbleSort 冒泡排序
 func BubbleSort(arr []int) {
 	if arr == nil || len(arr) < 2 {
 		return
