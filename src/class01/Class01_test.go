@@ -29,3 +29,10 @@ func TestInsertionSort(t *testing.T) {
 	assert.Equal(t, true, reflect.DeepEqual(arr, specArr))
 	t.Log(arr)
 }
+
+func TestBSExist(t *testing.T) {
+	arr := []int{1, 2, 2, 3, 4, 6, 7, 8, 10}
+	assert.Equal(t, false, BSExist(arr, 5))
+	assert.Equal(t, true, BSExist(arr, 2))
+	assert.Equal(t, true, BSExist(arr, 6))
+}
