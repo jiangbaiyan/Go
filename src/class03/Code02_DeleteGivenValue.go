@@ -6,8 +6,8 @@ func DeleteGivenValue(head *Node, num int) *Node {
 		head = head.next
 	}
 	// head来到第一个不是num的位置，head不再往后移动，需要cur来进行接下来的遍历
-	var pre *Node = head
-	var cur *Node = head
+	var pre = head
+	var cur = head
 	for cur != nil {
 		if cur.value == num {
 			pre.next = cur.next
