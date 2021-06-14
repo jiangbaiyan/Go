@@ -43,3 +43,28 @@ func TestDeleteGivenValue(t *testing.T) {
 		resHead = resHead.next
 	}
 }
+
+func TestRingArray(t *testing.T) {
+	q := &MyQueue{}
+	q.limit = 3
+	q.arr = make([]interface{}, q.limit, q.limit)
+	q.Push(1)
+	q.Push(2)
+	q.Push(3)
+	for _, item := range q.arr {
+		t.Log(item)
+	}
+	// 1, 2, 3
+	ans, _ := q.Pop()
+	// 1
+	t.Log(ans)
+	// 1, 2, 3
+	for _, item := range q.arr {
+		t.Log(item)
+	}
+	q.Push(4)
+	// 4, 2, 3
+	for _, item := range q.arr {
+		t.Log(item)
+	}
+}
