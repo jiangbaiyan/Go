@@ -127,3 +127,13 @@ func TestGetMax(t *testing.T) {
 	arr := []int{1, 2, 3, 4, 2, 3, 5, 6, 7, 2, 1}
 	t.Log(GetMax(arr))
 }
+
+func TestHashMap(t *testing.T) {
+	s1 := MyStack{}
+	s2 := MyStack{}
+	m := make(map[MyStack]bool)
+	m[s1] = true
+	v, ok := m[s2]
+	t.Log(v)  // true
+	t.Log(ok) // true
+}
