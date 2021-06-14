@@ -90,3 +90,40 @@ func TestRingArray(t *testing.T) {
 		t.Log(item)
 	}
 }
+
+func TestGetMin(t *testing.T) {
+	ms := &MinStack{minStack: &MyStack{q: &DoubleEndsQueue{}}, dataStack: &MyStack{q: &DoubleEndsQueue{}}}
+	ms.Push(2)
+	t.Log(ms.GetMin()) // 2
+	ms.Push(2)
+	t.Log(ms.GetMin()) // 2
+	ms.Push(3)
+	t.Log(ms.GetMin()) // 2
+	ms.Push(1)
+	t.Log(ms.GetMin()) // 1
+}
+
+func TestTwoStackQueue(t *testing.T) {
+	q := &TwoStackQueue{stackPush: &MyStack{q: &DoubleEndsQueue{}}, stackPop: &MyStack{q: &DoubleEndsQueue{}}}
+	q.EnQueue(1)
+	q.EnQueue(2)
+	q.EnQueue(3)
+	t.Log(q.Dequeue())
+	t.Log(q.Dequeue())
+	t.Log(q.Dequeue())
+}
+
+func TestTwoQueueStack(t *testing.T) {
+	s := &TwoQueueStack{queue: &MyQueue{q: &DoubleEndsQueue{}}, help: &MyQueue{q: &DoubleEndsQueue{}}}
+	s.Push(1)
+	s.Push(2)
+	s.Push(3)
+	t.Log(s.Pop())
+	t.Log(s.Pop())
+	t.Log(s.Pop())
+}
+
+func TestGetMax(t *testing.T) {
+	arr := []int{1, 2, 3, 4, 2, 3, 5, 6, 7, 2, 1}
+	t.Log(GetMax(arr))
+}

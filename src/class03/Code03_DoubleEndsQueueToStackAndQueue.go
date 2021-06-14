@@ -93,13 +93,20 @@ func (m *MyStack) IsEmpty() bool {
 }
 
 type MyQueue struct {
-	q *DoubleEndsQueue
+	q    *DoubleEndsQueue
+	size int
 }
 
 func (m *MyQueue) EnQueue(v interface{}) {
 	m.q.EnqueueFromHead(v)
+	m.size++
 }
 
 func (m *MyQueue) DeQueue() interface{} {
+	m.size--
 	return m.q.DequeueFromTail()
+}
+
+func (m *MyQueue) GetSize() int {
+	return m.size
 }
