@@ -68,7 +68,7 @@ func (d *DoubleEndsQueue) DequeueFromTail() interface{} {
 	return cur.value
 }
 
-func (d *DoubleEndsQueue) IsEmpty() interface{} {
+func (d *DoubleEndsQueue) IsEmpty() bool {
 	return d.head == nil
 }
 
@@ -82,6 +82,14 @@ func (m *MyStack) Push(v interface{}) {
 
 func (m *MyStack) Pop() interface{} {
 	return m.q.DequeueFromHead()
+}
+
+func (m *MyStack) Peek() interface{} {
+	return m.q.head.value
+}
+
+func (m *MyStack) IsEmpty() bool {
+	return m.q.IsEmpty()
 }
 
 type MyQueue struct {
