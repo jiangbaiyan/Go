@@ -44,8 +44,30 @@ func TestDeleteGivenValue(t *testing.T) {
 	}
 }
 
+func TestMyQueue(t *testing.T) {
+	q := &MyQueue{q: &DoubleEndsQueue{}}
+	q.EnQueue(1)
+	q.EnQueue(2)
+	q.EnQueue(3)
+	t.Log(q.DeQueue())
+	t.Log(q.DeQueue())
+	t.Log(q.DeQueue())
+	t.Log(q.DeQueue())
+}
+
+func TestMyStack(t *testing.T) {
+	q := &MyStack{q: &DoubleEndsQueue{}}
+	q.Push(1)
+	q.Push(2)
+	q.Push(3)
+	t.Log(q.Pop())
+	t.Log(q.Pop())
+	t.Log(q.Pop())
+	t.Log(q.Pop())
+}
+
 func TestRingArray(t *testing.T) {
-	q := &MyQueue{}
+	q := &MyRingQueue{}
 	q.limit = 3
 	q.arr = make([]interface{}, q.limit, q.limit)
 	q.Push(1)
