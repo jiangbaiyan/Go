@@ -31,3 +31,15 @@ func TestReverseDoubleLinkedList(t *testing.T) {
 		resHead = resHead.next
 	}
 }
+
+func TestDeleteGivenValue(t *testing.T) {
+	node1 := &Node{value: 1, next: nil}
+	node2 := &Node{next: node1, value: 2}
+	node3 := &Node{next: node2, value: 3}
+	head := node3
+	resHead := DeleteGivenValue(head, 3)
+	for resHead != nil {
+		log.Print(resHead.value)
+		resHead = resHead.next
+	}
+}
