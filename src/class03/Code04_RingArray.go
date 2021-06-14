@@ -1,6 +1,7 @@
 package class03
 
-type MyQueue struct {
+// MyQueue 数组实现循环队列
+type MyRingQueue struct {
 	pushi int
 	popi  int
 	size  int
@@ -8,7 +9,7 @@ type MyQueue struct {
 	arr   []interface{}
 }
 
-func (m *MyQueue) Push(value interface{}) {
+func (m *MyRingQueue) Push(value interface{}) {
 	if m.size == m.limit {
 		panic("队列已满")
 	}
@@ -18,7 +19,7 @@ func (m *MyQueue) Push(value interface{}) {
 	return
 }
 
-func (m *MyQueue) Pop() interface{} {
+func (m *MyRingQueue) Pop() interface{} {
 	if m.size == 0 {
 		panic("队列为空")
 	}
@@ -28,7 +29,7 @@ func (m *MyQueue) Pop() interface{} {
 	return ans
 }
 
-func (m *MyQueue) nextIndex(i int) int {
+func (m *MyRingQueue) nextIndex(i int) int {
 	if i+1 >= m.limit {
 		return 0
 	}
