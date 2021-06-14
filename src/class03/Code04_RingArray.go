@@ -1,7 +1,5 @@
 package class03
 
-import "errors"
-
 type MyQueue struct {
 	pushi int
 	popi  int
@@ -10,24 +8,24 @@ type MyQueue struct {
 	arr   []interface{}
 }
 
-func (m *MyQueue) Push(value interface{}) error {
+func (m *MyQueue) Push(value interface{}) {
 	if m.size == m.limit {
-		return errors.New("队列已满")
+		panic("队列已满")
 	}
 	m.arr[m.pushi] = value
 	m.size++
 	m.pushi = m.nextIndex(m.pushi)
-	return nil
+	return
 }
 
-func (m *MyQueue) Pop() (interface{}, error) {
+func (m *MyQueue) Pop() interface{} {
 	if m.size == 0 {
-		return nil, errors.New("队列为空")
+		panic("队列为空")
 	}
 	ans := m.arr[m.popi]
 	m.size--
 	m.popi = m.nextIndex(m.popi)
-	return ans, nil
+	return ans
 }
 
 func (m *MyQueue) nextIndex(i int) int {

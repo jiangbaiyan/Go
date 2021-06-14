@@ -55,7 +55,7 @@ func TestRingArray(t *testing.T) {
 		t.Log(item)
 	}
 	// 1, 2, 3
-	ans, _ := q.Pop()
+	ans := q.Pop()
 	// 1
 	t.Log(ans)
 	// 1, 2, 3
