@@ -1,6 +1,6 @@
 package class02
 
-// arr中，只有一种数，出现奇数次
+// OddTimesNum1 一个数组中有一种数出现了奇数次，其他数都出现了偶数次，怎么找到并打印这种数
 func OddTimesNum1(arr []int) int {
 	eor := 0
 	for _, item := range arr {
@@ -9,7 +9,7 @@ func OddTimesNum1(arr []int) int {
 	return eor
 }
 
-// arr中，有两种数，出现奇数次
+// OddTimesNum2 一个数组中有两种数出现了奇数次，其他数都出现了偶数次，怎么找到并打印这两种数
 func OddTimesNum2(arr []int) (int, int) {
 	// 1. 先拿到这两个数的疑惑结果，用eor表示，假设这两个数为4和5
 	eor := 0

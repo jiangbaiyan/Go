@@ -23,3 +23,9 @@ func TestOddTimesNum2(t *testing.T) {
 	assert.Equal(t, 4, num1)
 	assert.Equal(t, 5, num2)
 }
+
+func TestKM(t *testing.T) {
+	arr := []int{0, 0, 0, 1, 1, 1, 2, 1, 2, 2, 2, 3, 3, 3, 3} // k = 2, m = 4
+	OnlyKTimes(arr, 2, 4)
+	assert.Equal(t, -1, OnlyKTimes(arr, 2, 4))
+}
