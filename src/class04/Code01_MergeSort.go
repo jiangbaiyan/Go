@@ -64,6 +64,7 @@ func MergeSort2(arr []int) {
 	N := len(arr)
 	mergeSize := 1
 	for mergeSize < N {
+		// 当前左组的第一个位置
 		L := 0
 		for L < N {
 			M := L + mergeSize - 1
