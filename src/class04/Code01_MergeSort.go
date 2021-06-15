@@ -55,3 +55,37 @@ func merge(arr []int, L int, mid int, R int) {
 	}
 	return
 }
+
+// MergeSort2 非递归版归并排序
+func MergeSort2(arr []int) {
+	if arr == nil || len(arr) < 2 {
+		return
+	}
+	N := len(arr)
+	mergeSize := 1
+	for mergeSize < N {
+		L := 0
+		for L < N {
+			M := L + mergeSize - 1
+			if M >= N {
+				break
+			}
+			R := min(M+mergeSize, N-1)
+			merge(arr, L, M, R)
+			L = R + 1
+		}
+		// 防止溢出
+		if mergeSize > N/2 {
+			break
+		}
+		// 步长 * 2
+		mergeSize <<= 1
+	}
+}
+
+func min(a int, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
