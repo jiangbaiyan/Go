@@ -67,11 +67,14 @@ func MergeSort2(arr []int) {
 		L := 0
 		for L < N {
 			M := L + mergeSize - 1
+			// 没有右组, 直接不管
 			if M >= N {
 				break
 			}
+			// 有右组, 右组也可能越界, 取不越界的那个
 			R := min(M+mergeSize, N-1)
 			merge(arr, L, M, R)
+			// 继续下一组
 			L = R + 1
 		}
 		// 防止溢出
