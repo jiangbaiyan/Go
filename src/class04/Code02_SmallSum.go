@@ -18,6 +18,7 @@ func process2(arr []int, L int, R int) int {
 		return 0
 	}
 	mid := L + ((R - L) >> 1)
+	// 左边排序产生的小和 + 右边排序产生的小和 + 当前merge过程中产生的小和
 	return process2(arr, L, mid) + process2(arr, mid+1, R) + merge2(arr, L, mid, R)
 }
 
