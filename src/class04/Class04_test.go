@@ -10,3 +10,8 @@ func TestMergeSort(t *testing.T) {
 	MergeSort2(arr)
 	t.Log(arr)
 }
+
+func TestSmallSum(t *testing.T) {
+	arr := []int{1, 3, 4, 2, 5}
+	t.Log(SmallSum(arr))
+}

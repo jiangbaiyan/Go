@@ -1,18 +1,18 @@
 package class04
 
 func MergeSort(arr []int) {
-	process(arr, 0, len(arr)-1)
+	process1(arr, 0, len(arr)-1)
 }
 
 // 子过程, 数组在L..R上有序
 // 分解子问题: 砍一半, 左边和右边分别有序, 然后merge就是整体有序
-func process(arr []int, L int, R int) {
+func process1(arr []int, L int, R int) {
 	if L == R {
 		return
 	}
 	mid := L + (R-L)>>1
-	process(arr, L, mid)   // 让左边有序
-	process(arr, mid+1, R) // 让右边有序
+	process1(arr, L, mid)   // 让左边有序
+	process1(arr, mid+1, R) // 让右边有序
 	// 让整体有序
 	merge(arr, L, mid, R)
 }
