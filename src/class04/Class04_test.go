@@ -20,3 +20,8 @@ func TestReversePair(t *testing.T) {
 	arr := []int{2, 5, 1, 4}
 	t.Log(ReversePair(arr))
 }
+
+func TestBiggerThanRightTwice(t *testing.T) {
+	arr := []int{3, 1, 7, 0, 2}
+	t.Log(BiggerThanRightTwice(arr))
+}
