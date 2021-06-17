@@ -15,3 +15,8 @@ func TestSmallSum(t *testing.T) {
 	arr := []int{1, 3, 4, 2, 5}
 	t.Log(SmallSum(arr))
 }
+
+func TestReversePair(t *testing.T) {
+	arr := []int{2, 5, 1, 4}
+	t.Log(ReversePair(arr))
+}
