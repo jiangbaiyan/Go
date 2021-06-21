@@ -4,6 +4,7 @@ import (
 	"math/rand"
 )
 
+// QuickSort 快排
 func QuickSort(arr []int) {
 	if len(arr) <= 1 {
 		return

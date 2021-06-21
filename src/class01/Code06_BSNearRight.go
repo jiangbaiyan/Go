@@ -1,6 +1,6 @@
 package class01
 
-// BSNearLeft 在arr上，找满足<=value的最右位置
+// BSNearRight 在arr上，找满足<=value的最右位置
 func BSNearRight(arr []int, value int) int {
 	L := 0
 	R := len(arr) - 1
