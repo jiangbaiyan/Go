@@ -19,18 +19,18 @@ func process2(arr []int, L int, R int) {
 	// 快排3.0 首先随机选一个值与数组最后一个元素(划分值)交换
 	randIndex := L + rand.Intn(R-L+1)
 	arr[randIndex], arr[R] = arr[R], arr[randIndex]
-	// eqL, eqR为等于区的左右边界
-	eqL, eqR := netherlandsFlagFlag(arr, L, R)
+	// eqL, eqR为等于区的左边界和右边界, 等于区内的数字从此就不用再动了, 递归的处理左边和右边
+	eqL, eqR := netherlandsFlag(arr, L, R)
 	// 处理左边
 	process2(arr, L, eqL-1)
 	// 处理右边
 	process2(arr, eqR+1, R)
 }
 
-// netherlandFlag 在L...R上做荷兰国旗划分
+// netherlandsFlag 在L...R上做荷兰国旗划分
 // arr[R]为划分值
 // <arr[R]在左边, =arr[R]在中间 >arr[R]在右边 返回=区的左右边界
-func netherlandsFlagFlag(arr []int, L int, R int) (int, int) {
+func netherlandsFlag(arr []int, L int, R int) (int, int) {
 	if L > R {
 		return -1, -1
 	}
