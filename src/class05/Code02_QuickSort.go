@@ -47,6 +47,7 @@ func netherlandsFlagFlag(arr []int, L int, R int) (int, int) {
 		} else if arr[index] > arr[R] {
 			arr[more-1], arr[index] = arr[index], arr[more-1]
 			more--
+			// 注意这里index不++, 因为右边换过来的数还没看过, 需要停住看一下
 		} else {
 			index++
 		}
