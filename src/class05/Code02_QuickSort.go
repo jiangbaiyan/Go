@@ -52,6 +52,8 @@ func netherlandsFlagFlag(arr []int, L int, R int) (int, int) {
 			index++
 		}
 	}
+	// 这里最终要把划分值与大于区的第一个数做交换, 保证中间全部为等于区
 	arr[R], arr[more] = arr[more], arr[R]
+	// 所以等于区就会往右扩一个单位, 为[less+1, more]
 	return less + 1, more
 }
