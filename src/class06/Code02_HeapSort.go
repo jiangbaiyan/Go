@@ -4,11 +4,14 @@ func HeapSort(arr []int) {
 	if len(arr) <= 1 {
 		return
 	}
-	// 构建最大堆
-	/*	// 第一种方式, 来一个数heapInsert一次, 复杂度 N * logN
+	// 先构建最大堆
+
+	/*	第一种方式, 来一个数heapInsert一次, 复杂度 N * logN
 		for i := range arr {
 			HeapInsert(arr, i)
-		}*/
+		}
+	*/
+
 	// 第二种方式, 从最后一个往前heapify, 复杂度O(N)
 	for i := len(arr) - 1; i >= 0; i-- {
 		Heapify(arr, i, len(arr))
