@@ -48,3 +48,7 @@ func (h *MyHeap) Pop() int {
 	Heapify(h.heap, 0, h.heapSize)
 	return ans
 }
+
+func (h *MyHeap) IsEmpty() bool {
+	return h.heapSize == 0
+}
