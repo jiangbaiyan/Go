@@ -30,6 +30,7 @@ func (l Lines) Swap(i, j int) {
 	l[i], l[j] = l[j], l[i]
 }
 
+// MaxCover 最大线段重合长度
 func MaxCover(m [][]int) int {
 	lines := make(Lines, 0)
 	for i := 0; i < len(m); i++ {
