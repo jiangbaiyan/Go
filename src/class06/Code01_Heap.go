@@ -52,3 +52,11 @@ func (h *MyHeap) Pop() int {
 func (h *MyHeap) IsEmpty() bool {
 	return h.heapSize == 0
 }
+
+func (h *MyHeap) Peek() int {
+	return h.heap[0]
+}
+
+func (h *MyHeap) Size() int {
+	return h.heapSize
+}
