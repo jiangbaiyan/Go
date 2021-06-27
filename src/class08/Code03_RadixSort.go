@@ -17,14 +17,18 @@ func RadixSort(arr []int) {
 	// 1. 准备10个桶
 	buckets := make([]*class03.MyRingQueue, 10, 10)
 	digit := MaxBits(arr)
-	// d = 1为个位, 从最低位一直到最高位
+	// d = 1为个位, 从最低位一直到最高位遍历
 	for d := 1; d <= digit; d++ {
 		for _, item := range arr {
 			if buckets[GetDigit(item, d)] == nil {
 				buckets[GetDigit(item, d)] = class03.NewMyRingQueue(10000)
 			}
+			// 如buckets[1].Push(101)
+			// 如buckets[3].Push(3)
+			// 如buckets[3].Push(43)
 			buckets[GetDigit(item, d)].Push(item)
 		}
+		// 拷贝回原数组
 		i := 0
 		for _, item := range buckets {
 			if item != nil {
@@ -34,9 +38,11 @@ func RadixSort(arr []int) {
 				}
 			}
 		}
+		// 下个循环继续十位, 百位...到最高位, 直到排好序
 	}
 }
 
+// GetDigit 求当前位上的数, d=1为个位 d=2为十位等等
 func GetDigit(x int, d int) int {
 	return (x / (int(math.Pow10(d - 1)))) % 10
 }
