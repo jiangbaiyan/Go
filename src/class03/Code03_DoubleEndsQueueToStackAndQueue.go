@@ -6,6 +6,13 @@ type DoubleEndsQueue struct {
 	tail *DoubleNode
 }
 
+func NewDoubleEndsQueue() *DoubleEndsQueue {
+	return &DoubleEndsQueue{
+		head: &DoubleNode{},
+		tail: &DoubleNode{},
+	}
+}
+
 // EnqueueFromHead 入队，头插法
 func (d *DoubleEndsQueue) EnqueueFromHead(v interface{}) {
 	node := &DoubleNode{value: v}

@@ -1,12 +1,19 @@
 package class03
 
-// MyQueue 数组实现循环队列
+// MyRingQueue 数组实现循环队列
 type MyRingQueue struct {
 	pushi int
 	popi  int
 	size  int
 	limit int
 	arr   []interface{}
+}
+
+func NewMyRingQueue(limit int) *MyRingQueue {
+	return &MyRingQueue{
+		limit: limit,
+		arr:   make([]interface{}, limit, limit),
+	}
 }
 
 func (m *MyRingQueue) Push(value interface{}) {
@@ -34,4 +41,8 @@ func (m *MyRingQueue) nextIndex(i int) int {
 		return 0
 	}
 	return i + 1
+}
+
+func (m *MyRingQueue) IsEmpty() bool {
+	return m.size == 0
 }
