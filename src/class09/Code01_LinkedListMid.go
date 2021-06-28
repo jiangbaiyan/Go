@@ -39,11 +39,32 @@ func MidOrDownMidNode(head *Node) *Node {
 }
 
 // MidOrUpMidPreNode 输入链表头节点，奇数长度返回中点前一个，偶数长度返回上中点前一个
-func MidOrUpMidPreNode(head *Node) {
-
+func MidOrUpMidPreNode(head *Node) *Node {
+	if head == nil || head.next == nil || head.next.next == nil {
+		return nil
+	}
+	fast := head.next.next
+	slow := head
+	for fast.next != nil && fast.next.next != nil {
+		fast = fast.next.next
+		slow = slow.next
+	}
+	return slow
 }
 
 // MidOrDownMidPreNode 输入链表头节点，奇数长度返回中点前一个，偶数长度返回下中点前一个
-func MidOrDownMidPreNode(head *Node) {
-
+func MidOrDownMidPreNode(head *Node) *Node {
+	if head == nil || head.next == nil {
+		return nil
+	}
+	if head.next.next == nil {
+		return head
+	}
+	fast := head.next
+	slow := head
+	for fast.next != nil && fast.next.next != nil {
+		fast = fast.next.next
+		slow = slow.next
+	}
+	return slow
 }
