@@ -1,7 +1,7 @@
 package class09
 
 type Node struct {
-	value interface{}
+	value int
 	next  *Node
 }
 

@@ -1,5 +1,6 @@
 package class09
 
+// IsPalindromeList 回文链表
 func IsPalindromeList(head *Node) bool {
 	if head == nil || head.next == nil {
 		return true
