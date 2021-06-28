@@ -10,6 +10,7 @@ func MidOrUpMidNode(head *Node) *Node {
 	if head == nil || head.next == nil || head.next.next == nil {
 		return head
 	}
+	// 核心: 通过改变slow和fast的初始位置来实现中点的指定返回
 	slow := head
 	fast := head
 	// 奇数个, head.next == nil 停
