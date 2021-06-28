@@ -16,8 +16,9 @@ func IsPalindromeList(head *Node) bool {
 	n1 := slow
 	n2 := slow.next
 	slow.next = nil
+	var n3 *Node
 	for n2 != nil {
-		n3 := n2.next
+		n3 = n2.next
 		n2.next = n1
 		n1 = n2
 		n2 = n3
@@ -36,5 +37,12 @@ func IsPalindromeList(head *Node) bool {
 		t = t.next
 	}
 	// 4. 这里不能直接return, 需要将原链表调整回去
+	// 翻转后面这部分链表, n3 = pre, n1 = cur , n2 = next
+	for n1 != nil {
+		n2 = n1.next
+		n1.next = n3
+		n3 = n1
+		n1 = n2
+	}
 	return res
 }
