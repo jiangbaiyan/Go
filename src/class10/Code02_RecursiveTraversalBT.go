@@ -8,7 +8,7 @@ type TreeNode struct {
 	value interface{}
 }
 
-// f 递归序
+// f 递归序 总能回到自己三次
 func f(head *TreeNode) {
 	if head == nil {
 		return
