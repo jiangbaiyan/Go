@@ -8,6 +8,18 @@ type TreeNode struct {
 	value interface{}
 }
 
+// f 递归序
+func f(head *TreeNode) {
+	if head == nil {
+		return
+	}
+	// 1
+	f(head.left)
+	// 2
+	f(head.right)
+	// 3
+}
+
 // Pre 先序
 func Pre(head *TreeNode) {
 	if head == nil {
