@@ -125,6 +125,7 @@ func BothLoop(head1 *Node, head2 *Node, loop1 *Node, loop2 *Node) *Node {
 		}
 		return cur1
 	} else {
+		// 2. 入环节点在环内
 		cur1 := loop1
 		// 转一圈, 看回来之前是否嫩关于到loop2, 如果能, 则返回loop1/loop2
 		for cur1 != loop1 {
