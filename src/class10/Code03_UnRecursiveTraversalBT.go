@@ -59,14 +59,18 @@ func InU(cur *TreeNode) {
 		return
 	}
 	stack := class03.MyStack{}
-	for !stack.IsEmpty() || cur != nil {
-		for cur != nil {
-			stack.Push(cur)
-			cur = cur.left
-		}
+	for cur != nil {
+		stack.Push(cur)
+		cur = cur.left
+	}
+	for !stack.IsEmpty() {
 		node := stack.Pop().(*TreeNode)
 		fmt.Println(node.value)
 		node = node.right
+		for node != nil {
+			stack.Push(node)
+			node = node.left
+		}
 	}
 	return
 }
