@@ -1,6 +1,8 @@
 package class11
 
-import "github.com/jiangbaiyan/go/src/class03"
+import (
+	"github.com/jiangbaiyan/go/src/utils"
+)
 
 // PreMarshal 先序方式序列化
 func PreMarshal(head *Node) {
@@ -45,18 +47,18 @@ func LevelMarshal(head *Node) []interface{} {
 		return ans
 	}
 	ans = append(ans, head.value)
-	queue := &class03.MyRingQueue{}
+	queue := &utils.Queue{}
 	for !queue.IsEmpty() {
-		head := queue.Pop().(*Node)
+		head := queue.Dequeue().(*Node)
 		if head.left != nil {
 			ans = append(ans, head.left.value)
-			queue.Push(head.left)
+			queue.Enqueue(head.left)
 		} else {
 			ans = append(ans, nil)
 		}
 		if head.right != nil {
 			ans = append(ans, head.right.value)
-			queue.Push(head.right)
+			queue.Enqueue(head.right)
 		} else {
 			ans = append(ans, nil)
 		}
