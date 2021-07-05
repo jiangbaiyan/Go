@@ -1,5 +1,7 @@
 package class11
 
+import "github.com/jiangbaiyan/go/src/class03"
+
 // PreMarshal 先序方式序列化
 func PreMarshal(head *Node) {
 	ans := make([]interface{}, 0)
@@ -33,4 +35,31 @@ func preUnmarshal(preList []interface{}) *Node {
 	head.left = preUnmarshal(preList)
 	head.right = preUnmarshal(preList)
 	return head
+}
+
+// LevelMarshal 层序序列化
+func LevelMarshal(head *Node) []interface{} {
+	ans := make([]interface{}, 0)
+	if head == nil {
+		ans = append(ans, nil)
+		return ans
+	}
+	ans = append(ans, head.value)
+	queue := &class03.MyRingQueue{}
+	for !queue.IsEmpty() {
+		head := queue.Pop().(*Node)
+		if head.left != nil {
+			ans = append(ans, head.left.value)
+			queue.Push(head.left)
+		} else {
+			ans = append(ans, nil)
+		}
+		if head.right != nil {
+			ans = append(ans, head.right.value)
+			queue.Push(head.right)
+		} else {
+			ans = append(ans, nil)
+		}
+	}
+	return ans
 }
