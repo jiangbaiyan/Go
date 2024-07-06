@@ -1,7 +1,7 @@
 package class07
 
 import (
-	"github.com/jiangbaiyan/go/src/class06"
+	"github.com/jiangbaiyan/go/src/old/class06"
 	"sort"
 )
 

@@ -2,7 +2,7 @@ package class11
 
 import (
 	"fmt"
-	"github.com/jiangbaiyan/go/src/class03"
+	"github.com/jiangbaiyan/go/src/old/class03"
 )
 
 type Node struct {

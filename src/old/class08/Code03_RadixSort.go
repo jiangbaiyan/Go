@@ -1,7 +1,7 @@
 package class08
 
 import (
-	"github.com/jiangbaiyan/go/src/class03"
+	"github.com/jiangbaiyan/go/src/old/class03"
 	"math"
 )
 

@@ -2,7 +2,7 @@ package class10
 
 import (
 	"fmt"
-	"github.com/jiangbaiyan/go/src/class03"
+	"github.com/jiangbaiyan/go/src/old/class03"
 )
 
 // PreU 非递归先序遍历
